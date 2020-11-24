@@ -21,3 +21,19 @@ let niklas = {
 };
 
 console.log(siri, niklas)
+
+// vi kan lägga till egenskaper på ett simpel sätt på någon utav objekten
+// det gör vi eklaste genom punktnotation
+siri.address = "Drottninggatan 20";
+// vi kan även ändra på egenskaper i ett objekt, det finns två sätt att göra detta på första är på via punktnotation
+console.log(siri, niklas);
+// Det andra sätter är på ett arrayliknande sätt.
+siri["age"] = 23;
+siri["gender"] = "non-binary";
+
+console.log(siri, niklas);
+
+// vill man ta bort en egenskap, vilket man sällan gör
+delete siri.gender;
+delete siri["age"];
+console.log(siri, niklas);
