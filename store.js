@@ -6,7 +6,20 @@ let ica = {
     city: "Skurup",
     staff:[], // defaultvärdet är en tom array som vi sen kan lägga till ta bort ifrån med hjälp av javascript
     products:[],
-    
+    hireStaff: function(person){
+           // vi använder oss av this här, för att "this" hänvisare till det egna objektet. Så "this" = ica
+        this.staff.push(person);
+        person.worksAt = this;
+        return this;
+    },
+
+    fireStaff: function(person){
+        // vi kan här använda en arraymetoden som heter remove()
+        this.staff.remove(person);
+        person.worksAt = null;
+        return this; // får ut objekt på engång 
+    }
+
 }
 
 // 🔥🔥🔥🔥🔥 person objekt 🔥🔥🔥🔥🔥
@@ -16,7 +29,7 @@ let siri = {
     lastName: "Kampan", 
     age: 21,
     salary: 25000,
-    worksAt: {},
+    worksAt: null,
 };
 
 let erik = {
@@ -24,7 +37,7 @@ let erik = {
     lastName: "Jansson",
     age: 45,
     salary: 26000,
-    worksAt: {},
+    worksAt: null,
 };
 
 let maria = {
@@ -32,5 +45,6 @@ let maria = {
     lastName: "Karlsson",
     age: 23,
     salary: 30000,
-    worksAt: {},
+    worksAt: null,
 };
+
